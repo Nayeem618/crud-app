@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class adminController {
     private final Logger log = LoggerFactory.getLogger(adminController.class);
+    @GetMapping("/demo")
   public String demo(){
       log.info("inside the admin controller");
       return "inside the demo method ====adminController";

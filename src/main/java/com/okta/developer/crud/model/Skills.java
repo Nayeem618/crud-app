@@ -14,6 +14,9 @@ public class Skills {
     @JoinColumn(name = "user_id")
     private Users users;
 
+    public Skills() {
+    }
+
     public Skills(String skill_name, Users users) {
         this.skill_name = skill_name;
         this.users = users;

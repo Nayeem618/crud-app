@@ -15,6 +15,9 @@ public class Likes {
     private Posts posts;
 
 
+    public Likes() {
+    }
+
     public Likes(Long user_id, Posts posts) {
         this.user_id = user_id;
         this.posts = posts;

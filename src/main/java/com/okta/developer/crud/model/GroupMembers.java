@@ -22,6 +22,9 @@ public class GroupMembers {
         this.groups = groups;
     }
 
+    public GroupMembers() {
+    }
+
     public Long getGroup_member_id() {
         return group_member_id;
     }

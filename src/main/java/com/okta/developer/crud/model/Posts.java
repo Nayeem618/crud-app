@@ -2,7 +2,7 @@ package com.okta.developer.crud.model;
 
 import javax.persistence.*;
 
-import java.time.Instant;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -12,7 +12,7 @@ public class Posts {
     @GeneratedValue
     private Long post_id;
     private String content;
-    private Instant post_date;
+    private Date post_date;
 
     @OneToOne
     @JoinColumn(name = "user_id")
@@ -24,7 +24,10 @@ public class Posts {
     @OneToMany(mappedBy = "posts")
     private List<Shares> shares;
 
-    public Posts(String content, Instant post_date, Users users, List<Comments> comments, List<Likes> likes, List<Shares> shares) {
+    public Posts() {
+    }
+
+    public Posts(String content, Date post_date, Users users, List<Comments> comments, List<Likes> likes, List<Shares> shares) {
         this.content = content;
         this.post_date = post_date;
         this.users = users;
@@ -49,11 +52,11 @@ public class Posts {
         this.content = content;
     }
 
-    public Instant getPost_date() {
+    public Date getPost_date() {
         return post_date;
     }
 
-    public void setPost_date(Instant post_date) {
+    public void setPost_date(Date post_date) {
         this.post_date = post_date;
     }
 
