@@ -10,13 +10,15 @@ public class Comments {
     @GeneratedValue
     private  Long comment_id;
     private Long user_id;
-    private Long content;
+    private String content;
     private Date comment_date;
     @OneToOne
     @JoinColumn(name = "post_id")
     private Posts posts;
 
-    public Comments(Long user_id, Long content, Date comment_date, Posts posts) {
+    public Comments() {
+    }
+    public Comments(Long user_id, String content, Date comment_date, Posts posts) {
         this.user_id = user_id;
         this.content = content;
         this.comment_date = comment_date;
@@ -39,11 +41,11 @@ public class Comments {
         this.user_id = user_id;
     }
 
-    public Long getContent() {
+    public String getContent() {
         return content;
     }
 
-    public void setContent(Long content) {
+    public void setContent(String content) {
         this.content = content;
     }
 
