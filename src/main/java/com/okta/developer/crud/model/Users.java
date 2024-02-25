@@ -32,6 +32,9 @@ public class Users {
     @OneToMany(mappedBy = "users")
     private List<Groups> groups;
 
+    public Users() {
+    }
+
     public Users(String email, String password, String name, String location, Date join_date, Profiles profiles, List<Connections> connections, List<Education> education, List<Posts> posts, List<Experience> experience, List<Skills> skills, List<Groups> groups) {
         this.email = email;
         this.password = password;

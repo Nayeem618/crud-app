@@ -2,7 +2,7 @@ package com.okta.developer.crud.model;
 
 import javax.persistence.*;
 
-import java.time.Instant;
+import java.util.Date;
 
 @Entity
 @Table(name = "Experience")
@@ -14,14 +14,16 @@ public class Experience {
     private String company_name;
     private  String title;
     private  String location;
-    private Instant start_date;
-    private  Instant end_date;
+    private Date start_date;
+    private  Date end_date;
     @OneToOne
     @JoinColumn(name = "user_id")
     private Users users;
 
+    public Experience() {
+    }
 
-    public Experience(String company_name, String title, String location, Instant start_date, Instant end_date, Users users) {
+    public Experience(String company_name, String title, String location, Date start_date, Date end_date, Users users) {
         this.company_name = company_name;
         this.title = title;
         this.location = location;
@@ -62,19 +64,19 @@ public class Experience {
         this.location = location;
     }
 
-    public Instant getStart_date() {
+    public Date getStart_date() {
         return start_date;
     }
 
-    public void setStart_date(Instant start_date) {
+    public void setStart_date(Date start_date) {
         this.start_date = start_date;
     }
 
-    public Instant getEnd_date() {
+    public Date getEnd_date() {
         return end_date;
     }
 
-    public void setEnd_date(Instant end_date) {
+    public void setEnd_date(Date end_date) {
         this.end_date = end_date;
     }
 

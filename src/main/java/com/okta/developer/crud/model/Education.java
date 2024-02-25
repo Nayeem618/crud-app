@@ -28,6 +28,10 @@ public class Education {
         this.users = users;
     }
 
+    public Education() {
+
+    }
+
     public Long getEducation_id() {
         return education_id;
     }
