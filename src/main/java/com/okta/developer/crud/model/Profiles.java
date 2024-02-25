@@ -17,6 +17,9 @@ public class Profiles {
     @JoinColumn(name = "user_id")
     private Users users;
 
+    public Profiles() {
+    }
+
     public Profiles(String headline, String summary, String industry, String website, Users users) {
         this.headline = headline;
         this.summary = summary;

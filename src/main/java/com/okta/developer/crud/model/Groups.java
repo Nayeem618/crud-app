@@ -21,6 +21,9 @@ public class Groups {
     @OneToMany(mappedBy = "groups")
     private List<GroupMembers> groupMembers;
 
+    public Groups() {
+    }
+
     public Groups(String group_name, String description, Date created_date, Users users, List<GroupMembers> groupMembers) {
         this.group_name = group_name;
         this.description = description;

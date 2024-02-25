@@ -16,6 +16,9 @@ public class Connections {
     @JoinColumn(name = "user_id")
     private Users users;
 
+    public Connections() {
+    }
+
     public Connections(Long connection_user_id, String connection_status, Users users) {
         this.connection_user_id = connection_user_id;
         this.connection_status = connection_status;
