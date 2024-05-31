@@ -1,51 +1,49 @@
 package com.okta.developer.crud.model;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
 
 @Entity
-@Table(name = "Education")
 public class Education {
 
     @Id
-    @GeneratedValue
-    private Long education_id;
-    private String school_name;
-    private  String degree;
-    private String field_of_study;
-    private Date start_date;
-    private Date end_date;
-    @OneToOne
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer educationId;
+
+    @ManyToOne
     @JoinColumn(name = "user_id")
-    private Users users;
+    private User user;
 
-    public Education(String school_name, String degree, String field_of_study, Date start_date, Date end_date, Users users) {
-        this.school_name = school_name;
-        this.degree = degree;
-        this.field_of_study = field_of_study;
-        this.start_date = start_date;
-        this.end_date = end_date;
-        this.users = users;
+    private String school;
+    private String degree;
+    private String fieldOfStudy;
+    private Date startDate;
+    private Date endDate;
+
+    // Getters and Setters
+
+    public Integer getEducationId() {
+        return educationId;
     }
 
-    public Education() {
-
+    public void setEducationId(Integer educationId) {
+        this.educationId = educationId;
     }
 
-    public Long getEducation_id() {
-        return education_id;
+    public User getUser() {
+        return user;
     }
 
-    public void setEducation_id(Long education_id) {
-        this.education_id = education_id;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    public String getSchool_name() {
-        return school_name;
+    public String getSchool() {
+        return school;
     }
 
-    public void setSchool_name(String school_name) {
-        this.school_name = school_name;
+    public void setSchool(String school) {
+        this.school = school;
     }
 
     public String getDegree() {
@@ -56,48 +54,27 @@ public class Education {
         this.degree = degree;
     }
 
-    public String getField_of_study() {
-        return field_of_study;
+    public String getFieldOfStudy() {
+        return fieldOfStudy;
     }
 
-    public void setField_of_study(String field_of_study) {
-        this.field_of_study = field_of_study;
+    public void setFieldOfStudy(String fieldOfStudy) {
+        this.fieldOfStudy = fieldOfStudy;
     }
 
-    public Date getStart_date() {
-        return start_date;
+    public Date getStartDate() {
+        return startDate;
     }
 
-    public void setStart_date(Date start_date) {
-        this.start_date = start_date;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 
-    public Date getEnd_date() {
-        return end_date;
+    public Date getEndDate() {
+        return endDate;
     }
 
-    public void setEnd_date(Date end_date) {
-        this.end_date = end_date;
-    }
-
-    public Users getUsers() {
-        return users;
-    }
-
-    public void setUsers(Users users) {
-        this.users = users;
-    }
-
-    @Override
-    public String toString() {
-        return "Education{" +
-                "education_id=" + education_id +
-                ", school_name='" + school_name + '\'' +
-                ", degree='" + degree + '\'' +
-                ", field_of_study='" + field_of_study + '\'' +
-                ", start_date=" + start_date +
-                ", end_date=" + end_date +
-                ", users=" + users +
-                '}';
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
     }
 }
