@@ -62,27 +62,4 @@ public class Post {
         this.postDate = postDate;
     }
 
-    public List<Comment> getComments() {
-        return comments;
-    }
-
-    public void setComments(List<Comment> comments) {
-        this.comments = comments;
-    }
-
-    public List<UserLike> getLikes() {
-        return likes;
-    }
-
-    public void setLikes(List<UserLike> likes) {
-        this.likes = likes;
-    }
-
-    public List<Share> getShares() {
-        return shares;
-    }
-
-    public void setShares(List<Share> shares) {
-        this.shares = shares;
-    }
 }
