@@ -1,7 +1,10 @@
 package com.okta.developer.crud.repository;
 
-import com.okta.developer.crud.model.Users;
+import com.okta.developer.crud.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<Users, Long> {
+import java.util.Optional;
+
+public interface UserRepository extends JpaRepository<User, Integer> {
+    Optional<User> findByEmail(String email);
 }
