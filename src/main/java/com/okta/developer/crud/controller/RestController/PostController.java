@@ -1,4 +1,4 @@
-package com.okta.developer.crud.controller;
+package com.okta.developer.crud.controller.RestController;
 
 import com.okta.developer.crud.model.Post;
 import com.okta.developer.crud.services.PostService;
