@@ -30,6 +30,12 @@ logging:
             sql:
               BasicBinder: TRACE
 
+              logging:
+                level:
+                  org:
+                    springframework:
+                      security=DEBUG:
+
 
 
 # H2 DataBase configuration

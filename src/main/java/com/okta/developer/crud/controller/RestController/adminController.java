@@ -1,4 +1,4 @@
-package com.okta.developer.crud.controller;
+package com.okta.developer.crud.controller.RestController;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
